@@ -16,15 +16,15 @@ const Countries = () => {
   const array = [1, 2, 3, 2, 3, 2];
   const navigate = useNavigate()
   return (
-    <Grid container py={12} lg={8} mx={"auto"}>
+    <Grid container py={12} lg={8} display={'flex'}  sm={12} mx={"auto"}>
       <Grid container pb={8}>
         <Typography variant="h4" fontWeight={600} color={"#44403c"}>
           Countries Available
         </Typography>
       </Grid>
-      <Grid container gap={8}>
+      <Grid container display={'flex'} alignItems={'center'} justifyContent={'center'} mx={'auto'} gap={13}>
         {countries.map((res) => (
-          <Grid item>
+          <Grid item  >
             <Card
             
             
