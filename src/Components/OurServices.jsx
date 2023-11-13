@@ -15,14 +15,14 @@ import {
 const OurServices = () => {
   return (
     <div className="w-2/3 p-6 py-12 text-left mx-auto">
-      <div>
+      <div className="mb-12">
         <h1 className="text-5xl font-bold text-stone-700">Our Services</h1>
         <p className=" text-xs mt-2 text-stone-500 bg-stone-200 p-1 py-2 px-3">
           EXPLORE HOW WE WORK FOR YOU
         </p>
       </div>
 
-      <div className="py-8">
+      <div className="pt-8 pb-0">
         <Grid container gap={8}>
           {services.map((res) => (
             <Grid height={450} item>

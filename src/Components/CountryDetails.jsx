@@ -4,8 +4,8 @@ const CountryDetails = ({ data }) => {
   console.log("🚀 ~ file: CountryDetails.jsx:4 ~ CountryDetails ~ data:", data);
   window.scrollTo(0, 0);
   return (
-    <div className="lg:w-3/4 mx-auto p-4 lg:flex md:flex gap-10">
-      <div className="w-2/3 mx-auto text-left pb-32 ">
+    <div className="lg:w-3/4 mx-auto p-12 lg:flex md:flex gap-10">
+      <div className="w-2/3 mx-auto text-left pb-12 ">
         <img
           className="rounded-lg"
           src="https://images.pexels.com/photos/1222438/pexels-photo-1222438.jpeg?auto=compress&cs=tinysrgb&w=1600"
