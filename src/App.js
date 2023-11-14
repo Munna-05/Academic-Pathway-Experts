@@ -6,6 +6,7 @@ import AboutCountry from "./Pages/AboutCountry";
 import Home from "./Pages/Home";
 
 function App() {
+  window.scrollTo(0, 1);
   return (
     <div className="App ">
       <BrowserRouter>

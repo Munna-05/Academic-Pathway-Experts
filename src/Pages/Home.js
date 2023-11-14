@@ -6,7 +6,7 @@ import OurServices from "../Components/OurServices";
 
 const Home = () => {
   return (
-    <div>
+    <div className="-mt-1">
       <CoverArea />
       <Section2 />
       <OurServices/>    
