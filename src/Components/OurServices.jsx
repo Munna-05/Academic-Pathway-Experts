@@ -17,7 +17,7 @@ const OurServices = () => {
     <div className="w-2/3 p-6 py-12 text-left mx-auto">
       <div className="mb-12">
         <h1 className="text-5xl font-bold text-stone-700">Our Services</h1>
-        <p className=" text-xs mt-2 text-stone-500 bg-stone-200 p-1 py-2 px-3">
+        <p className=" text-xs mt-2 text-stone-500  p-1 py-2 px-1">
           EXPLORE HOW WE WORK FOR YOU
         </p>
       </div>

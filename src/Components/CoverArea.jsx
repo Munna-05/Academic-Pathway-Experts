@@ -25,30 +25,29 @@ const CoverArea = () => {
           </div>
         </div>
       </div> */}
-      <div className="bg-[url('https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?w=2000&t=st=1699991088~exp=1699991688~hmac=3e2c667f55a647e6f1afabe2628f0cfff70d3a7c5806eac3dff0b48deb1ad7ee')]  z-0 h-[75vh] scale-100 scale-x-105 bg-cover bg-center   ">
-        <div class="w-3/4 mx-auto h-full flex  justify-center items-center backdrop-blur-md">
-          <div className="grid grid-cols-2  w-full h-full">
-            <div className="flex justify-center items-center">
-              <div className=" border-l pl-6   ">
-                <div className=" w-2/3 text-left text-5xl font-bold font-sans text-white">
-                  Academic{" "}
-                  <span className="text-red-500 drop-shadow-md	">Pathway</span>{" "}
-                  Experts
-                </div>
-                <div className="text-left text-white text-sm mt-2">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Fuga, veritatis!
+      <div className="bg-[url('https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?w=2000&t=st=1699991088~exp=1699991688~hmac=3e2c667f55a647e6f1afabe2628f0cfff70d3a7c5806eac3dff0b48deb1ad7ee')]  z-0 h-[75vh] scale-x-105 bg-cover bg-center   ">
+        <div class="w-full mx-auto h-[74.9vh] overflow-hidden  flex overflow-hidden justify-center items-center backdrop-blur-xl">
+          <div className="w-3/4 mx-auto">
+            {" "}
+            <div className="grid grid-cols-2  w-full h-full">
+              <div className="flex justify-center items-center">
+                <div className=" border-l pl-6   ">
+                  <div className=" w-2/3 text-left text-5xl font-bold font-sans text-white">
+                    Academic{" "}
+                    <span className="text-red-500 drop-shadow-md	">Pathway</span>{" "}
+                    Experts
+                  </div>
+                  <div className="text-left text-white text-sm mt-2">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Fuga, veritatis!
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex justify-center items-center text-white ">
-              <motion.img
-                animate={{
-                    
-                    rotate: [6,-6,6],
-                    scale:[0.8]
-                   
-                 
+              <div className="flex justify-center items-center text-white ">
+                <motion.img
+                  animate={{
+                    rotate: [6, -6, 6],
+                    scale: [0.8],
                   }}
                   transition={{
                     duration: 6,
@@ -56,10 +55,11 @@ const CoverArea = () => {
                     // times: [0, 0.2, 0.5, 0.8, 1],/
                     repeat: Infinity,
                   }}
-                className={`scale-[80%] ring ring-blue-500 border-2 border-blue-500 duration-100 mt-8 rounded-full mix-blend-multiply object-contain`}
-                src="https://img.freepik.com/free-vector/world-concept-illustration_114360-1391.jpg?t=st=1699993886~exp=1699994486~hmac=a96080856d940e92b83e36adb6d03cb121097b53f05ea0a5c74c4b7c0f9a1a07"
-                alt=""
-              />
+                  className={`scale-[80%] ring ring-blue-500 border-2 border-blue-500 duration-100 mt-8 rounded-full mix-blend-multiply object-contain`}
+                  src="https://img.freepik.com/free-vector/world-concept-illustration_114360-1391.jpg?t=st=1699993886~exp=1699994486~hmac=a96080856d940e92b83e36adb6d03cb121097b53f05ea0a5c74c4b7c0f9a1a07"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>

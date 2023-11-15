@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import { Navbar } from "./Components/MUIComponents/Navbar";
 import AboutCountry from "./Pages/AboutCountry";
 import Home from "./Pages/Home";
+import Login from "./Pages/Login";
 
 function App() {
   window.scrollTo(0, 1);
@@ -15,6 +16,7 @@ function App() {
         <Routes>
 
           <Route path='/' element={<Home/>} />
+          <Route path='/login' element={<Login/>} />
           <Route path='/about-country/:name' element={<AboutCountry/>} />
 
         </Routes>

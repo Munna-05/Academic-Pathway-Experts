@@ -13,11 +13,15 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
+import { Chip } from "@mui/material";
 
 const pages = [
   { name: "Home", path: "" },
   { name: "About", path: "about" },
   { name: "Contact us", path: "contact-us" },
+  { name: "Our Services", path: "contact-us" },
+  { name: "Our Blogs", path: "contact-us" },
+  { name: "Job Openings", path: "contact-us" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -44,17 +48,18 @@ export const Navbar = () => {
   return (
     <AppBar
       position="fixed"
+      variant="elevation"
       elevation={0}
-      sx={{ backdropFilter: "blur(5px)"}}
+      sx={{ backdropFilter: "blur(5px)" }}
       color="transparent"
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ color: "white" }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            onClick={()=>navigate('/')}
+            onClick={() => navigate("/")}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -62,12 +67,12 @@ export const Navbar = () => {
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
-              fontSize:30,
+              fontSize: 30,
               textDecoration: "none",
-              cursor:'pointer'
+              cursor: "pointer",
             }}
           >
-            - APE - 
+            - APE -
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -99,7 +104,7 @@ export const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page,i) => (
+              {pages.map((page, i) => (
                 <MenuItem key={i} onClick={handleCloseNavMenu}>
                   <Typography
                     onClick={() => navigate(`/${page.path}`)}
@@ -132,29 +137,42 @@ export const Navbar = () => {
           </Typography>
           <Box
             justifyContent={"center"}
-            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+            mx={40}
+            py={1}
+            borderRadius={25}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              background: "white",
+            }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={()=>{
-                  handleCloseNavMenu()
-                  navigate(`/${page.path}`)
-                }}
-                sx={{ my: 2, color: "black", display: "block" }}
+              <button
+                // key={page}
+                // onClick={()=>{
+                //   handleCloseNavMenu()
+                //   navigate(`/${page.path}`)
+                // }}
+                // sx={{ my: 2, color: "inverted", display: "block" }}
+                // className="text-white "
+                className=" mx-4 text-xs  text-stone-600 hover:text-teal-600 hover:font-semibold duration-200"
               >
                 {page.name}
-              </Button>
+              </button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <IconButton onClick={()=>navigate('/login')} sx={{ p: 0 }}>
+              {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                <button className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 rounded-full border-stone-500 ">
+                  Log in
+                </button>
               </IconButton>
             </Tooltip>
-            <Menu
+            {/* <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -175,7 +193,7 @@ export const Navbar = () => {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>
