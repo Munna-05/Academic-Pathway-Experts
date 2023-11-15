@@ -112,7 +112,7 @@ const JobSection = () => {
           </div>
         </div>
         <div className=" p-3 mb-12">
-          <button className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow hover:shadow-lg hover:shadow-stone-700">
+          <button className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
             get started
           </button>
         </div>
