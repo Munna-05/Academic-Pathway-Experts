@@ -16,8 +16,8 @@ import { useNavigate } from "react-router-dom";
 import { Chip } from "@mui/material";
 
 const pages = [
-  { name: "Home", path: "" },
-  { name: "About", path: "about" },
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
   { name: "Contact us", path: "contact-us" },
   { name: "Our Services", path: "contact-us" },
   { name: "Our Blogs", path: "contact-us" },
@@ -155,6 +155,7 @@ export const Navbar = () => {
                 // }}
                 // sx={{ my: 2, color: "inverted", display: "block" }}
                 // className="text-white "
+               onClick={()=>navigate(`${page.href}`)} 
                 className=" mx-4 text-xs  text-stone-600 hover:text-teal-600 hover:font-semibold duration-200"
               >
                 {page.name}

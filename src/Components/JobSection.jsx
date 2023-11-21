@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const JobSection = () => {
+    const navigate = useNavigate()
   return (
     <div className="w-full bg-stone-50 py-4">
       <div className="w-3/4  mx-auto  pt-16 px-16">
@@ -112,7 +114,7 @@ const JobSection = () => {
           </div>
         </div>
         <div className=" p-3 mb-12">
-          <button className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
+          <button onClick={()=>navigate('/signup')} className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
             get started
           </button>
         </div>
