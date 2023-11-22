@@ -18,9 +18,8 @@ const SignupForm = () => {
     const handleSubmit =()=>{
         if(Cpass !== Password){
         //    toast.error("Password doesn't match")
-           toast.loading('Loading...')
-           toast.success('Saved')
-           toast.error('Error Try again !!')
+           toast.loading('Creating Account...')
+          
         // toast.custom(<motion.div initial={{scale:0}} animate={{scale:1 , transition:{type:'spring'}}}  className='px-4 flex scale-110 w-80 bg-stone-600 text-teal-500 rounded-md h-10 items-center text-center'>
         //     <div>Password Error</div>
         // </motion.div>)
