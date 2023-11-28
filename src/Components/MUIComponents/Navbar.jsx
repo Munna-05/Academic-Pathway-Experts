@@ -15,20 +15,21 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
 import { Chip } from "@mui/material";
 
-const pages = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Contact us", path: "contact-us" },
-  { name: "Our Services", path: "contact-us" },
-  { name: "Our Blogs", path: "contact-us" },
-  { name: "Job Openings", path: "contact-us" },
-];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
+
+  const pages = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Contact us", path: "/contact-us" },
+    { name: "Our Services", path: "/contact-us" },
+    { name: "Our Blogs", path: "/blogs" },
+    { name: "Job Openings", path: "/openings" },
+  ];
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -45,6 +46,9 @@ export const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
   return (
     <AppBar
       position="fixed"
@@ -107,7 +111,7 @@ export const Navbar = () => {
               {pages.map((page, i) => (
                 <MenuItem key={i} onClick={handleCloseNavMenu}>
                   <Typography
-                    onClick={() => navigate(`/${page.path}`)}
+                    onClick={() => handleNavigate(page.path)}
                     textAlign="center"
                   >
                     {page?.name}
@@ -146,27 +150,27 @@ export const Navbar = () => {
               background: "white",
             }}
           >
-            {pages.map((page) => (
+            {pages.map((res, i) => (
               <button
-                // key={page}
+                key={i}
                 // onClick={()=>{
                 //   handleCloseNavMenu()
-                //   navigate(`/${page.path}`)
+                //   navigate(`/${res.path}`)
                 // }}
                 // sx={{ my: 2, color: "inverted", display: "block" }}
                 // className="text-white "
-               onClick={()=>navigate(`${page.href}`)} 
+                onClick={() => handleNavigate(res?.path)}
                 className=" mx-4 text-xs  text-stone-600 hover:text-teal-600 hover:font-semibold duration-200"
               >
-                {page.name}
+                {res?.name}
               </button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={()=>navigate('/login')} sx={{ p: 0 }}>
-              {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
+              <IconButton onClick={() => navigate("/login")} sx={{ p: 0 }}>
+                {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
                 {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                 <button className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 rounded-full border-stone-500 ">
                   Log in

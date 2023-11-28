@@ -1,6 +1,12 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const ProfileComponent = () => {
+  const [message, setMessage] = useState();
+
+  const handleSendMessage = () => {};
+
   return (
     <div className="h-screen p-20  bg-gray-100  ">
       <div className="border rounded-xl bg-stone-200 w-full h-60  mb-20">
@@ -26,6 +32,7 @@ const ProfileComponent = () => {
         <div className="bg-stone-50 shadow-xl rounded-xl ">
           <div className="text-left">
             <textarea
+              onChange={(e) => setMessage(e.target.value)}
               name=""
               className="w-full rounded-t-xl border-b border-stone-200 outline-none p-3 text-sm"
               placeholder="Write your enquiry here ..."
@@ -34,7 +41,10 @@ const ProfileComponent = () => {
               rows="6"
             ></textarea>
             <div className=" px-2 pb-2 flex justify-end">
-              <button className="text-sm bg-stone-800 capitalize py-1.5 px-8 text-stone-200 rounded-lg hover:text-green-500 hover:scale-[102%] duration-200 hover:shadow hover:shadow-lg hover:shadow-teal-100">
+              <button
+                onClick={() => handleSendMessage()}
+                className="text-sm bg-stone-800 capitalize py-1.5 px-8 text-stone-200 rounded-lg hover:text-green-500 hover:scale-[102%] duration-200 hover:shadow hover:shadow-lg hover:shadow-teal-100"
+              >
                 Send
               </button>
             </div>
