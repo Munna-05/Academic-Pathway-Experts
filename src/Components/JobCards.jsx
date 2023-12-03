@@ -383,7 +383,7 @@ const JobCards = () => {
 
             <div className="text-left p-3 border-b border-dashed">
               <h1 className="capitalize font-bold">Software Engineer</h1>
-              <h4 className="text-sky-500 text-sm">Bershire Hathway</h4>
+              <h4 className="text-sky-500 text-sm">Berkshire Hathway</h4>
               <p className="text-[14px] font-semibold text-stone-400">
                 United Kingdom
               </p>
