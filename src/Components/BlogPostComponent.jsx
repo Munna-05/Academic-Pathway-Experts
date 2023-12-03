@@ -12,7 +12,7 @@ const BlogPostComponent = () => {
       <div className="container mx-auto p-10">
         <img
           src="https://images.pexels.com/photos/5124877/pexels-photo-5124877.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          className="h-[50vh] mx-auto rounded-lg shadow-xl"
+          className="h-[50vh] mx-auto rounded-lg object-cover shadow-xl"
           alt=""
         />
       </div>

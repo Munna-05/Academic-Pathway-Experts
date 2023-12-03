@@ -28,7 +28,7 @@ export const Navbar = () => {
     { name: "Contact us", path: "/contact-us" },
     { name: "Our Services", path: "/contact-us" },
     { name: "Our Blogs", path: "/blogs" },
-    { name: "Job Openings", path: "/openings" },
+    { name: "Job Openings", path: "/job-openings" },
   ];
 
   const handleOpenNavMenu = (event) => {

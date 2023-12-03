@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import Profile from "./Pages/Profile";
 import AllBlogs from "./Pages/AllBlogs";
 import BlogPost from "./Pages/BlogPost";
+import AllJobs from "./Pages/AllJobs";
 
 function App() {
   window.scrollTo(0, 1);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/blogs" element={<AllBlogs />} />
+          <Route path="/job-openings" element={<AllJobs />} />
           <Route path="/blog-post" element={<BlogPost />} />
           <Route path="/about-country/:name" element={<AboutCountry />} />
         </Routes>
