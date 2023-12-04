@@ -1,8 +1,10 @@
 import moment from "moment";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const JobCards = () => {
   const [like, setLike] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <div>
@@ -13,7 +15,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img
@@ -79,7 +81,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img
@@ -145,7 +147,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img
@@ -211,7 +213,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img
@@ -277,7 +279,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img
@@ -343,7 +345,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img
@@ -409,7 +411,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img
@@ -475,7 +477,7 @@ const JobCards = () => {
 
 
 
-          <div className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
+          <div onClick={()=>navigate('/job-details')} className="shadow-lg hover:shadow-xl ring-1 hover:scale-[103%] ring-stone-100 shadow-stone-200 duration-300 cursor-pointer hover:shadow-stone-300 bg-white rounded-2xl">
             <div className="flex justify-between p-3">
               <div className="h-14  w-14 flex items-center justify-center rounded-md overflow-hidden">
                 <img

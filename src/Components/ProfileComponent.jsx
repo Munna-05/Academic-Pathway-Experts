@@ -1,14 +1,20 @@
 import axios from "axios";
+import moment from "moment";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 
 const ProfileComponent = () => {
   const [message, setMessage] = useState();
 
+  const array = [
+    1, 3, 4, 2, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3,
+    4, 34,
+  ];
+
   const handleSendMessage = () => {};
 
   return (
-    <div className="h-screen p-20  bg-gray-100  ">
+    <div className=" p-20  bg-gray-100  ">
       <div className="border rounded-xl bg-stone-200 w-full h-60  mb-20">
         <div className='w-full h-full rounded-xl bg-[url("https://4kwallpapers.com/images/walls/thumbs_3t/9602.jpg")] bg-cover'>
           <div className="relative w-full text-white flex items-end justify-center h-full">
@@ -28,7 +34,8 @@ const ProfileComponent = () => {
           </div>
         </div>
       </div>
-      <div className="w-[90%] mx-auto grid grid-cols-2 gap-1">
+
+      <div className="w-[60%] mx-auto">
         <div className="bg-stone-50 shadow-xl rounded-xl ">
           <div className="text-left">
             <textarea
@@ -50,7 +57,34 @@ const ProfileComponent = () => {
             </div>
           </div>
         </div>
-        <div>section2</div>
+      </div>
+      <div className=" mt-12 p-2 text-sm  bg-white rounded-xl shadow-xl gap-4 border-8 border-stone-50 w-full grid grid-cols-2">
+        <div className=" h-[100vh] overflow-scroll p-2">
+          {array.map((res) => (
+            <div className="w-full h-50 mb-4 bg-stone-50 rounded-xl text-left p-3 shadow">
+              <h1 className="first-letter:uppercase text-sm font-semibold">
+                lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit,
+                animi.
+              </h1>
+              <p className="text-[10px] text-stone-500">{moment(Date.now()).format('llll')}</p>
+              <div>
+                <textarea
+                  disabled
+                  className="border h-32 text-xs overflow-scroll mt-2 rounded-lg bg-white outline-none p-2 w-full"
+                  value="    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum, laudantium saepe aliquam consequatur, eius excepturi, illum suscipit maiores quasi facere dicta est nihil sunt nemo atque dolore eveniet accusamus? Itaque minus, optio, quas, voluptatum ipsa blanditiis at recusandae dicta perspiciatis sunt placeat obcaecati autem qui numquam! Quas, ratione adipisci harum tempore laudantium provident iusto inventore quis eligendi modi autem possimus? Aliquam, dolores esse quae sequi quibusdam enim voluptas accusamus provident voluptatum ea neque laudantium quaerat, qui autem, est repellendus doloribus. Quas tempore placeat in ipsum consequuntur repudiandae rem ab necessitatibus, rerum optio quaerat asperiores aperiam reprehenderit odit earum voluptatem.
+"
+                  name=""
+                  id=""
+                ></textarea>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className=" h-[100vh] overflow-scroll p-2">
+          {array.map((res) => (
+            <div className="w-full  mb-2 bg-stone-50 rounded-xl shadow">a</div>
+          ))}
+        </div>
       </div>
     </div>
   );
