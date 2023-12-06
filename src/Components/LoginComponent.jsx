@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {motion} from 'framer-motion'
+import { API } from "../API";
+import {useNavigate} from 'react-router-dom'
+import axios from "axios";
+import {useDispatch, useSelector} from 'react-redux'
+import { setUser } from "../Redux/userSlice";
 
 const LoginComponent = () => {
+  const [email,setEmail] = useState()
+  const [password,setPassword] = useState()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const user = useSelector((state)=>state.user.currentUser)
+  const token = localStorage.getItem('token')
+
+  useEffect(()=>{
+    if(user&&token || user || token){
+      navigate('/profile')
+    }
+  },[])
+  const handleLogin=()=>{
+    const data = {
+      email:email,
+      password:password
+    }
+    axios.post(`${API}/login`,data).then((res)=>{
+      console.log(res?.data?.user)
+      dispatch(setUser(res?.data?.user))
+      localStorage.setItem('token',res?.data.token)
+      navigate('/profile')
+    }).catch(e=>console.log(e))
+  }
   return (
     <div className="h-screen p-10 flex justify-center ">
       <motion.div initial={{opacity:0}} animate={{opacity:1 , transition:{duration:1 , delay:0.5}}} className="w-1/3 mx-auto mt-48">
@@ -14,6 +43,7 @@ const LoginComponent = () => {
               name=""
               id=""
               placeholder="Email"
+              onChange={(e)=>setEmail(e.target.value)}
             />
           </div>
           <div>
@@ -22,12 +52,14 @@ const LoginComponent = () => {
               type="text"
               name=""
               id=""
+              onChange={(e)=>setPassword(e.target.value)}
               placeholder="Password"
+              
             />
           </div>
         </div>
         <div className="mt-10">
-        <button className="text-sm bg-stone-800 capitalize py-3 px-12 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow hover:shadow-lg hover:shadow-teal-100">
+        <button onClick={handleLogin} className="text-sm bg-stone-800 capitalize py-3 px-12 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow hover:shadow-lg hover:shadow-teal-100">
             Login
           </button>
         </div>

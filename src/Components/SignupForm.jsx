@@ -30,9 +30,8 @@ const SignupForm = () => {
       toast.remove()
       toast.success("Account Created Successfully")
     }).catch(e=>{
-      console.log(e)
       toast.remove()
-      toast.error("Some error occured , try again")
+      toast.error(e?.response?.data?.message)
     })
     
     

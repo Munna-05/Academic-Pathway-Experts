@@ -21,6 +21,8 @@ export const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  console.log("🚀 ~ file: Navbar.jsx:25 ~ Navbar ~ token:", token)
 
   const pages = [
     { name: "Home", path: "/" },
@@ -49,6 +51,11 @@ export const Navbar = () => {
   const handleNavigate = (path) => {
     navigate(path);
   };
+
+  const handleLogout=()=>{
+    localStorage.removeItem('token')
+    navigate("/")
+  }
   return (
     <AppBar
       position="fixed"
@@ -169,12 +176,18 @@ export const Navbar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={() => navigate("/login")} sx={{ p: 0 }}>
+              <IconButton  sx={{ p: 0 }}>
                 {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
                 {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-                <button className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 rounded-full border-stone-500 ">
-                  Log in
-                </button>
+                {!token ? (
+                  <button onClick={() => navigate("/login")} className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 w-28 rounded-full border-stone-500 ">
+                    Log in
+                  </button>
+                ) : (
+                  <button onClick={handleLogout} className="text-red-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 w-28 rounded-full border-red-500 ">
+                    Log out
+                  </button>
+                )}
               </IconButton>
             </Tooltip>
             {/* <Menu

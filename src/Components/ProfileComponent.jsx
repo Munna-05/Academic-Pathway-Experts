@@ -3,7 +3,7 @@ import moment from "moment";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 
-const ProfileComponent = () => {
+const ProfileComponent = ({data}) => {
   const [message, setMessage] = useState();
 
   const array = [
@@ -26,8 +26,8 @@ const ProfileComponent = () => {
                   alt=""
                 />
                 <div className="mx-5 mt-2 text-left">
-                  <h1 className=" text-2xl">John Doe</h1>
-                  <p className="text-xs text-stone-300">JohnDoe@gmail.com</p>
+                  <h1 className=" text-2xl">{data?.name}</h1>
+                  <p className="text-xs text-stone-300">{data?.email}</p>
                 </div>
               </div>
             </div>

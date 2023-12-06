@@ -12,11 +12,17 @@ import AllBlogs from "./Pages/AllBlogs";
 import BlogPost from "./Pages/BlogPost";
 import AllJobs from "./Pages/AllJobs";
 import JobDetails from "./Pages/JobDetails";
+import { Provider } from 'react-redux';
+import { store } from "./Redux/Store";
+import EnquiryForm from "./Components/EnquiryForm";
+import EnquiryPage from "./Pages/EnquiryPage";
+
 
 function App() {
   window.scrollTo(0, 1);
   return (
-    <div className="App ">
+  <Provider store={store}>
+      <div className="App ">
       <Toaster
         position="top-right"
         reverseOrder={false}
@@ -51,6 +57,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/blogs" element={<AllBlogs />} />
+          <Route path="/enquiry" element={<EnquiryPage />} />
           <Route path="/job-openings" element={<AllJobs />} />
           <Route path="/job-details" element={<JobDetails />} />
           <Route path="/blog-post" element={<BlogPost />} />
@@ -62,6 +69,7 @@ function App() {
         </div>
       </BrowserRouter>
     </div>
+  </Provider>
   );
 }
 
