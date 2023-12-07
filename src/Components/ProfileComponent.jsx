@@ -2,10 +2,12 @@ import axios from "axios";
 import moment from "moment";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { useSelector } from "react-redux";
 
-const ProfileComponent = ({data}) => {
+const ProfileComponent = () => {
   const [message, setMessage] = useState();
-
+  const data = useSelector((state)=>state.user.currentUser)
+  console.log("🚀 ~ file: ProfileComponent.jsx:10 ~ ProfileComponent ~ data:", data)
   const array = [
     1, 3, 4, 2, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3,
     4, 34,

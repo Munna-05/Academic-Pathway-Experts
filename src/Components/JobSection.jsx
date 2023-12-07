@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const JobSection = () => {
     const navigate = useNavigate()
+    const user = useSelector((state)=>state.user.currentUser)
+    const token = localStorage.getItem('token')
   return (
     <div className="w-full bg-stone-50 py-4">
       <div className="w-3/4  mx-auto  pt-16 px-16">
@@ -114,9 +117,11 @@ const JobSection = () => {
           </div>
         </div>
         <div className=" p-3 mb-12">
-          <button onClick={()=>navigate('/signup')} className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
+        {user && token || user || token ?   <button onClick={()=>navigate('/profile')} className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
+            Go to Profile
+          </button>:  <button onClick={()=>navigate('/signup')} className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
             get started
-          </button>
+          </button>}
         </div>
       </div>
     </div>

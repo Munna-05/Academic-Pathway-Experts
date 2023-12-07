@@ -28,6 +28,7 @@ const LoginComponent = () => {
       console.log(res?.data?.user)
       dispatch(setUser(res?.data?.user))
       localStorage.setItem('token',res?.data.token)
+      localStorage.setItem('id',res?.data?.user?._id)
       navigate('/profile')
     }).catch(e=>console.log(e))
   }

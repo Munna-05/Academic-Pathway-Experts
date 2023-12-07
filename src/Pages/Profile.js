@@ -9,6 +9,8 @@ const Profile = () => {
   console.log("🚀 ~ file: Profile.js:9 ~ Profile ~ token:", token)
   const user = useSelector((state)=>state.user.currentUser)
   console.log("🚀 ~ file: Profile.js:11 ~ Profile ~ user:", user)
+  window.scrollTo(0, 0);
+
 
  if(!token || user){
   navigate('/login')
