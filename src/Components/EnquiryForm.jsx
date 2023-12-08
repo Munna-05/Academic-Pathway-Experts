@@ -1,4 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { API } from "../API";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const EnquiryForm = () => {
   const [formData, setFormData] = useState({
@@ -8,16 +12,30 @@ const EnquiryForm = () => {
     message: "",
   });
 
+  const navigate = useNavigate()
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    toast.loading('Sending Enquiry...')
     // Perform the form submission logic here
     // For simplicity, let's just log the form data
     console.log("Form submitted:", formData);
+    axios.post(`${API}/enquiry/${localStorage.getItem('id')}`,formData).then((res)=>{
+        console.log(res.data);
+        toast.remove()
+        toast.success('Enquiry Submitted')
+        setTimeout(() => {
+            navigate('/')
+        }, 1500);
+    }).catch(e=>{
+        console.log(e)
+        toast.remove()
+        toast.error("Error,Try again")
+    })
 
     // Reset the form after submission
     setFormData({

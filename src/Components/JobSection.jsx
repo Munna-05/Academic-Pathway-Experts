@@ -117,7 +117,7 @@ const JobSection = () => {
           </div>
         </div>
         <div className=" p-3 mb-12">
-        {user && token || user || token ?   <button onClick={()=>navigate('/profile')} className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
+        {user && token ?   <button onClick={()=>navigate('/profile')} className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
             Go to Profile
           </button>:  <button onClick={()=>navigate('/signup')} className="text-sm bg-stone-800 capitalize py-3 px-4 text-stone-200 rounded-lg hover:text-teal-300 hover:scale-[102%] duration-200 hover:shadow-lg hover:shadow-stone-700">
             get started

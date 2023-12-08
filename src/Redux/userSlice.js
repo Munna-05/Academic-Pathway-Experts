@@ -19,10 +19,13 @@ export const userSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
+    removeUser:(state)=>{
+        state.currentUser=null
+    }
   },
 });
 
-export const { setUser, setLoading, setError } = userSlice.actions;
+export const { setUser, setLoading, setError ,removeUser} = userSlice.actions;
 
 export const selectUser = (state) => state.user.currentUser;
 

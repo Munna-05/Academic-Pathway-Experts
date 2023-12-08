@@ -3,17 +3,31 @@ import moment from "moment";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const ProfileComponent = () => {
+const ProfileComponent = ({ enquiries, sendMessage, user }) => {
   const [message, setMessage] = useState();
-  const data = useSelector((state)=>state.user.currentUser)
-  console.log("🚀 ~ file: ProfileComponent.jsx:10 ~ ProfileComponent ~ data:", data)
+  const data = useSelector((state) => state.user.currentUser);
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  if (!data || !token) {
+    navigate("/");
+  }
   const array = [
     1, 3, 4, 2, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3,
     4, 34,
   ];
 
-  const handleSendMessage = () => {};
+  const handleSendMessage = () => {
+    const newMessage = {
+      message: message,
+      name: user?.name,
+      email: user?.email,
+      phone: user?.phone,
+    };
+    sendMessage(newMessage);
+    setMessage('')
+  };
 
   return (
     <div className=" p-20  bg-gray-100  ">
@@ -48,6 +62,7 @@ const ProfileComponent = () => {
               id=""
               cols="30"
               rows="6"
+              value={message}
             ></textarea>
             <div className=" px-2 pb-2 flex justify-end">
               <button
@@ -62,19 +77,21 @@ const ProfileComponent = () => {
       </div>
       <div className=" mt-12 p-2 text-sm  bg-white rounded-xl shadow-xl gap-4 border-8 border-stone-50 w-full grid grid-cols-2">
         <div className=" h-[100vh] overflow-scroll p-2">
-          {array.map((res) => (
+          {enquiries?.map((res) => (
             <div className="w-full h-50 mb-4 bg-stone-50 rounded-xl text-left p-3 shadow">
               <h1 className="first-letter:uppercase text-sm font-semibold">
-                lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit,
-                animi.
+                {res?.message}
               </h1>
-              <p className="text-[10px] text-stone-500">{moment(Date.now()).format('llll')}</p>
+              <p className="text-[10px] text-stone-500">
+                {moment(res?.createdAt).format("llll")}
+              </p>
               <div>
                 <textarea
                   disabled
-                  className="border h-32 text-xs overflow-scroll mt-2 rounded-lg bg-white outline-none p-2 w-full"
-                  value="    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cum, laudantium saepe aliquam consequatur, eius excepturi, illum suscipit maiores quasi facere dicta est nihil sunt nemo atque dolore eveniet accusamus? Itaque minus, optio, quas, voluptatum ipsa blanditiis at recusandae dicta perspiciatis sunt placeat obcaecati autem qui numquam! Quas, ratione adipisci harum tempore laudantium provident iusto inventore quis eligendi modi autem possimus? Aliquam, dolores esse quae sequi quibusdam enim voluptas accusamus provident voluptatum ea neque laudantium quaerat, qui autem, est repellendus doloribus. Quas tempore placeat in ipsum consequuntur repudiandae rem ab necessitatibus, rerum optio quaerat asperiores aperiam reprehenderit odit earum voluptatem.
-"
+                  className={`border h-32 text-xs overflow-scroll mt-2 rounded-lg bg-white outline-none p-2 w-full ${
+                    res?.reply ? "text-stone-700" : "text-stone-400"
+                  }`}
+                  value={res?.reply || "Waiting for the reply..."}
                   name=""
                   id=""
                 ></textarea>
@@ -83,9 +100,10 @@ const ProfileComponent = () => {
           ))}
         </div>
         <div className=" h-[100vh] overflow-scroll p-2">
-          {array.map((res) => (
+          {/* {array.map((res) => (
             <div className="w-full  mb-2 bg-stone-50 rounded-xl shadow">a</div>
-          ))}
+          ))} */}
+          <div className="text-stone-300 capitalize text-xl ">No new Posts</div>
         </div>
       </div>
     </div>

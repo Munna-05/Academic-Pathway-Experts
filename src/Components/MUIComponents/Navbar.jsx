@@ -13,7 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
-import { Chip } from "@mui/material";
+import { Chip, Grid } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { removeUser } from "../../Redux/userSlice";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -22,7 +24,8 @@ export const Navbar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  console.log("🚀 ~ file: Navbar.jsx:25 ~ Navbar ~ token:", token)
+  const dispatch = useDispatch();
+  console.log("🚀 ~ file: Navbar.jsx:25 ~ Navbar ~ token:", token);
 
   const pages = [
     { name: "Home", path: "/" },
@@ -52,10 +55,11 @@ export const Navbar = () => {
     navigate(path);
   };
 
-  const handleLogout=()=>{
-    localStorage.removeItem('token')
-    navigate("/")
-  }
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    dispatch(removeUser());
+    navigate("/");
+  };
   return (
     <AppBar
       position="fixed"
@@ -176,19 +180,31 @@ export const Navbar = () => {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton  sx={{ p: 0 }}>
-                {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-                {!token ? (
-                  <button onClick={() => navigate("/login")} className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 w-28 rounded-full border-stone-500 ">
-                    Log in
-                  </button>
-                ) : (
-                  <button onClick={handleLogout} className="text-red-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 w-28 rounded-full border-red-500 ">
-                    Log out
-                  </button>
-                )}
-              </IconButton>
+              {/* <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}> */}
+              {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+              {!token ? (
+                <button
+                  onClick={() => navigate("/login")}
+                  className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 w-28 rounded-full border-stone-500 "
+                >
+                  Log in
+                </button>
+              ) : (
+                <Grid display={"flex"} gap={2}>
+                  <div className="cursor-pointer" onClick={() => navigate("/profile")}>
+                    {" "}
+                    <Avatar src="https://i.pinimg.com/originals/bb/8b/97/bb8b976467f63fc083bcc18f2c47b760.jpg" />
+                  </div>
+                  <IconButton sx={{ p: 0 }}>
+                    <button
+                      onClick={handleLogout}
+                      className="text-red-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 w-28 rounded-full border-red-500 "
+                    >
+                      Log out
+                    </button>
+                  </IconButton>
+                </Grid>
+              )}
             </Tooltip>
             {/* <Menu
               sx={{ mt: "45px" }}
