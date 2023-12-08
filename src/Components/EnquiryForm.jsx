@@ -23,14 +23,14 @@ const EnquiryForm = () => {
     toast.loading('Sending Enquiry...')
     // Perform the form submission logic here
     // For simplicity, let's just log the form data
-    console.log("Form submitted:", formData);
     axios.post(`${API}/enquiry/${localStorage.getItem('id')}`,formData).then((res)=>{
         console.log(res.data);
+        console.log(res.data.message)
         toast.remove()
-        toast.success('Enquiry Submitted')
+        toast.success(res?.data?.message)
         setTimeout(() => {
             navigate('/')
-        }, 1500);
+        }, 2500);
     }).catch(e=>{
         console.log(e)
         toast.remove()

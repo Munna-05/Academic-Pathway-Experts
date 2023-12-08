@@ -2,6 +2,7 @@ import React from 'react'
 import EnquiryForm from '../Components/EnquiryForm'
 import {motion} from 'framer-motion'
 
+
 const EnquiryPage = () => {
     window.scrollTo(0, 0);
 
@@ -11,3 +12,5 @@ const EnquiryPage = () => {
 }
 
 export default EnquiryPage
+
+
