@@ -1,10 +1,11 @@
 import React from "react";
+import EnquiryForm from "./EnquiryForm";
 
 const CountryDetails = ({ data }) => {
   console.log("🚀 ~ file: CountryDetails.jsx:4 ~ CountryDetails ~ data:", data);
  
   return (
-    <div className="lg:w-3/4 mx-auto p-12 lg:flex md:flex gap-10">
+    <div className="lg:w-4/5 h-screen mx-auto p-12 lg:flex md:flex gap-10">
       <div className="w-2/3 mx-auto text-left pb-12 ">
         <img
           className="rounded-lg"
@@ -16,8 +17,8 @@ const CountryDetails = ({ data }) => {
         <p className="text-left mb-2">{data.description}</p>
         <p className="text-left">{data.benefits.description}</p>
       </div>
-      <div className="lg:w-1/3 md:w-1/3 w-full text-left py-3 h-screen rounded-lg bg-stone-50 ring-1 ring-stone-300">
-        <iframe
+      <div className="lg:w-1/3 md:w-1/3 w-full text-left py-3 h-screen ">
+        {/* <iframe
           className="h-full w-full"
           src="https://docs.google.com/forms/d/e/1FAIpQLSfskLcclpaEhroU63ZpiN6jfhfTaLdPvvhOVB-nZDSDIG_heg/viewform?embedded=true"
           width="640"
@@ -27,7 +28,8 @@ const CountryDetails = ({ data }) => {
           marginwidth="0"
         >
           Loading…
-        </iframe>
+        </iframe> */}
+        <EnquiryForm/>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const Home = () => {
     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0 }} className="-mt-1">
       <CoverArea />
       <Section2 />
-      <WeWorkWith/>
+      {/* <WeWorkWith/> */}
       <JobSection/>
       <OurServices/>    
       <Countries />
