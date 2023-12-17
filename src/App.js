@@ -61,7 +61,7 @@ function App() {
               <Route path="/enquiry" element={<EnquiryPage />} />
               <Route path="/job-openings" element={<AllJobs />} />
               <Route path="/job-details" element={<JobDetails />} />
-              <Route path="/blog-post" element={<BlogPost />} />
+              <Route path="/blog-post/:id" element={<BlogPost />} />
               <Route path="/about-country/:name" element={<AboutCountry />} />
             </Routes>
           </Layout>
