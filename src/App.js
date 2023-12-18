@@ -18,6 +18,8 @@ import EnquiryForm from "./Components/EnquiryForm";
 import EnquiryPage from "./Pages/EnquiryPage";
 
 import Layout from "./Components/Layout";
+import Services from "./Pages/Services";
+import ViewService from "./Pages/ViewService";
 
 function App() {
   window.scrollTo(0, 1);
@@ -59,6 +61,8 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/blogs" element={<AllBlogs />} />
               <Route path="/enquiry" element={<EnquiryPage />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/view-service/:id" element={<ViewService />} />
               <Route path="/job-openings" element={<AllJobs />} />
               <Route path="/job-details" element={<JobDetails />} />
               <Route path="/blog-post/:id" element={<BlogPost />} />

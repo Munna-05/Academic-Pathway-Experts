@@ -1,5 +1,4 @@
-import React from "react";
-import { services } from "../DummyData/Datas";
+import React, { useEffect, useState } from "react";
 import MuiCard from "./MUIComponents/Card";
 import {
   Button,
@@ -11,8 +10,23 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { API, VIEW } from "../API";
+import axios from "axios";
+import { setService } from "../Redux/serviceSlice";
+import { useNavigate } from "react-router-dom";
 
 const OurServices = () => {
+  const navigate = useNavigate()
+   const [services,setAllServices] = useState()
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        axios.get(`${API}/services`).then((res)=>{
+            setAllServices(res?.data)
+            dispatch(setService(res?.data))
+        })
+    },[])
+
   return (
     <div className="w-2/3 p-6 py-12 text-left mx-auto">
       <div className="mb-12">
@@ -24,8 +38,8 @@ const OurServices = () => {
 
       <div className="pt-8 pb-0">
         <Grid container gap={8}>
-          {services.map((res) => (
-            <Grid height={450} item>
+          {services?.slice(0,6).map((res) => (
+            <Grid item>
               <Card
                 elevation={6}
                 sx={{
@@ -39,20 +53,20 @@ const OurServices = () => {
               >
                 <CardMedia
                   component="img"
-                  sx={{ objectFit: "contain", height: 200, overflow: "hidden" }}
-                  image={res.image}
+                  sx={{ objectFit: "cover", height: 200, overflow: "hidden" }}
+                  image={VIEW+res?.image}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    {res.name}
+                    {res?.title}
                   </Typography>
                   <Typography
                     sx={{ width: "auto" }}
                     variant="body2"
-                    height={250}
                     color="text.secondary"
+                    className="line-clamp-5 "
                   >
-                    {res.description}
+                    {res?.description}
                   </Typography>
                 </CardContent>
                 <CardActions>
@@ -61,12 +75,10 @@ const OurServices = () => {
                     borderTop={"solid grey 0.25px"}
                     pt={1}
                     width={"100%"}
-                    justifyContent={"space-between"}
+                    justifyContent={"right"}
                   >
-                    <Button size="small" sx={{ fontSize: 12 }}>
-                      Share
-                    </Button>
-                    <Button size="small" sx={{ fontSize: 12 }}>
+                   
+                    <Button size="small" onClick={()=>navigate(`/view-service/${res?._id}`)} sx={{ fontSize: 12 }}>
                       Learn More
                     </Button>
                   </Grid>

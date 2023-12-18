@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import FavoriteBorderSharpIcon from "@mui/icons-material/FavoriteBorderSharp";
 import LongParagraphComponent from "./LongParagraphComponent";
 import { VIEW } from "../API";
+import AllBlogs from "../Pages/AllBlogs";
+import AllBlogCards from "./AllBlogCards";
 
 const BlogPostComponent = ({data}) => {
   const [like, setLike] = useState(false);
@@ -69,6 +71,8 @@ const BlogPostComponent = ({data}) => {
           <LongParagraphComponent text={data?.content} />
         </p>
       </div>
+      <h1 className="mt-32 mb-12 text-2xl font-bold capitalize">Other Blogs</h1>
+          <AllBlogCards main={false}/>
     </div>
   );
 };
