@@ -22,7 +22,7 @@ const Profile = () => {
     console.log(data);
 
     axios
-      .post(`${API}/enquiry/${localStorage.getItem("id")}`, data)
+      .post(`${process.env.REACT_APP_API_URL}/enquiry/${localStorage.getItem("id")}`, data)
       .then((res) => {
         console.log(res.data);
         setCall(!call);
@@ -40,7 +40,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get(`${API}/get-my-enquiries/${user?._id}`)
+      .get(`${process.env.REACT_APP_API_URL}/get-my-enquiries/${user?._id}`)
       .then((res) => {
         console.log(res.data);
         setEnquiries(res.data);

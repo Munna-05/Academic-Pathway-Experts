@@ -11,7 +11,7 @@ const AllBlogs = () => {
     const [blogs,setAllBlogs] = useState()
     const dispatch = useDispatch()
     useEffect(()=>{
-      axios.get(`${API}/blogs`).then(res=>{
+      axios.get(`${process.env.REACT_APP_API_URL}/blogs`).then(res=>{
         console.log(res?.data)
         setAllBlogs(res?.data)
         dispatch(setBlogs(res?.data))

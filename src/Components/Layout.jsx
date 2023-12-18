@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch();
   if (token && !user) {
     axios
-      .get(`${API}/user/${localStorage.getItem("id")}`)
+      .get(`${process.env.REACT_APP_API_URL}/user/${localStorage.getItem("id")}`)
       .then((res) => {
         console.log(res.data.user);
         dispatch(setUser(res?.data?.user));

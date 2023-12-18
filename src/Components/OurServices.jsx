@@ -21,7 +21,7 @@ const OurServices = () => {
    const [services,setAllServices] = useState()
     const dispatch = useDispatch()
     useEffect(()=>{
-        axios.get(`${API}/services`).then((res)=>{
+        axios.get(`${process.env.REACT_APP_API_URL}/services`).then((res)=>{
             setAllServices(res?.data)
             dispatch(setService(res?.data))
         })

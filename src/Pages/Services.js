@@ -20,7 +20,7 @@ const Services = () => {
     // },[])
     const services = useSelector(state=>state.services.data)
   return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5,type:'spring  '}}  className='pt-16'><AllServices data={services}/></motion.div>
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5,type:'spring  '}}  className='pt-16'><AllServices data={services||[]}/></motion.div>
   )
 }
 

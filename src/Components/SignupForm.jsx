@@ -25,7 +25,7 @@ const SignupForm = () => {
 
     console.log(data);
 
-    await axios.post(`${API}/signup`, data).then(res=>{
+    await axios.post(`${process.env.REACT_APP_API_URL}/signup`, data).then(res=>{
       console.log(res)
       toast.remove()
       toast.success("Account Created Successfully")

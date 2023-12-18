@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AboutUs = () => {
+    window.scroll(0,0)
     return (
         <div className="container mx-auto my-8 p-8 mt-16 bg-gray-100 rounded shadow-md">
             <h1 className="text-3xl font-bold text-blue-500 mb-4">About Academic Pathway Experts</h1>

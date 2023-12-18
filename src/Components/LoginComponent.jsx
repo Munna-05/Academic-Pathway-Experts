@@ -27,7 +27,7 @@ const LoginComponent = () => {
       password: password,
     };
     axios
-      .post(`${API}/login`, data)
+      .post(`${process.env.REACT_APP_API_URL}/login`, data)
       .then((res) => {
         console.log(res?.data?.user);
         dispatch(setUser(res?.data?.user));
