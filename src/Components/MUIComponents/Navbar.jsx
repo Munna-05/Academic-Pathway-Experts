@@ -29,8 +29,8 @@ export const Navbar = () => {
 
   const pages = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Contact us", path: "/contact-us" },
+    { name: "About", path: "/about-us" },
+    // { name: "Contact us", path: "/contact-us" },
     { name: "Our Services", path: "/services" },
     { name: "Our Blogs", path: "/blogs" },
     { name: "Job Openings", path: "/job-openings" },

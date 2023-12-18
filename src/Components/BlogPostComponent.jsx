@@ -15,7 +15,7 @@ const BlogPostComponent = ({data}) => {
       <div className="container mx-auto p-10">
         <img
           src={VIEW+data?.image}
-          className="h-[50vh] mx-auto rounded-lg object-cover shadow-xl"
+          className="mx-auto w-1/2 h-[50vh] object-cover rounded-lg border-4 border-white shadow-lg shadow-stone-400"
           alt=""
         />
       </div>

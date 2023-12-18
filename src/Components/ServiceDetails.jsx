@@ -12,7 +12,7 @@ const ServiceDetails = ({ data }) => {
   return (
     <div className=" mx-auto p-8">
       <div>
-        <img className="mx-auto w-1/2 h-[50vh] object-cover" src={VIEW + data?.image} alt="" />
+        <img className="mx-auto w-1/2 h-[50vh] object-cover rounded-lg border-4 border-white shadow-lg shadow-stone-400" src={VIEW + data?.image} alt="" />
       </div>
 
       <div className="px-6 w-2/3 mx-auto m-12 text-left">
