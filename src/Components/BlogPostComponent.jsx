@@ -5,34 +5,40 @@ import LongParagraphComponent from "./LongParagraphComponent";
 import { VIEW } from "../API";
 import AllBlogs from "../Pages/AllBlogs";
 import AllBlogCards from "./AllBlogCards";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 import { Parser } from "./excludedFolder/Parser";
 
-
-const BlogPostComponent = ({data}) => {
-  console.log("🚀 ~ file: BlogPostComponent.jsx:10 ~ BlogPostComponent ~ data:", data)
+const BlogPostComponent = ({ data }) => {
+  console.log(
+    "🚀 ~ file: BlogPostComponent.jsx:10 ~ BlogPostComponent ~ data:",
+    data
+  );
   const [like, setLike] = useState(false);
   return (
     <div>
       <div className="container mx-auto p-10">
         <img
-          src={VIEW+data?.image}
+          src={VIEW + data?.image}
           className="mx-auto w-1/2 h-[50vh] object-cover rounded-lg border-4 border-white shadow-lg shadow-stone-400"
           alt=""
         />
       </div>
 
       <div className="w-2/3 p-8 mx-auto">
-        <h1 className="text-4xl capitalize font-bold">
-         {data?.title}
-        </h1>
+        <h1 className="text-4xl capitalize font-bold">{data?.title}</h1>
         <p className="mt-6 leading-7 font-semibold w-2/3 mx-auto">
           {data?.description}
         </p>
       </div>
 
       {/* author section  */}
-      <div className=" w-2/3 h-24 flex items-center px-4 justify-between m-4 mx-auto" style={{borderTop:"solid black 0.5px",borderBottom:"solid black 0.5px"}}>
+      <div
+        className=" w-2/3 h-24 flex items-center px-4 justify-between m-4 mx-auto"
+        style={{
+          borderTop: "solid black 0.5px",
+          borderBottom: "solid black 0.5px",
+        }}
+      >
         <div className="flex gap-4 items-center">
           <Avatar />
 
@@ -70,21 +76,12 @@ const BlogPostComponent = ({data}) => {
 
       <div className="w-2/3 mx-auto my-12">
         <p className="w-4/5 text-left mx-auto">
-          {/* <LongParagraphComponent text={data?.content} /> */}
-          {Parser(data)}
-       
+          <LongParagraphComponent text={data?.content} />
         </p>
-        
       </div>
 
-          
-    
-      
-  
-
-     
       <h1 className="mt-32 mb-12 text-2xl font-bold capitalize">Other Blogs</h1>
-          <AllBlogCards main={false}/>
+      <AllBlogCards main={false} />
     </div>
   );
 };
