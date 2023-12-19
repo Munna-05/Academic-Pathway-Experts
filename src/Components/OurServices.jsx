@@ -24,7 +24,7 @@ const OurServices = () => {
         axios.get(`${process.env.REACT_APP_API_URL}/services`).then((res)=>{
             setAllServices(res?.data)
             dispatch(setService(res?.data))
-        })
+        }).catch(e=>console.log(e))
     },[])
 
   return (
@@ -39,7 +39,7 @@ const OurServices = () => {
       <div className="pt-8 pb-0">
         <Grid container gap={8}>
           {services?.slice(0,6).map((res) => (
-            <Grid item>
+            <Grid item position={'relative'}>
               <Card
                 elevation={6}
                 sx={{
@@ -71,15 +71,15 @@ const OurServices = () => {
                 </CardContent>
                 <CardActions>
                   <Grid
+                  
                     display={"flex"}
-                    borderTop={"solid grey 0.25px"}
                     pt={1}
                     width={"100%"}
                     justifyContent={"right"}
                   >
                    
-                    <Button size="small" onClick={()=>navigate(`/view-service/${res?._id}`)} sx={{ fontSize: 12 }}>
-                      Learn More
+                    <Button className="" sx={{position:"absolute" ,padding:1, bottom:0,right:0,fontSize: 12 }} size="small" onClick={()=>navigate(`/view-service/${res?._id}`)}>
+                      Learn More...
                     </Button>
                   </Grid>
                 </CardActions>

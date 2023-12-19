@@ -9,7 +9,7 @@ const AllServices = ({ data }) => {
     <div className="w-3/4 mx-auto">
       <div className="grid grid-cols-3 gap-4 p-6">
         {data?.map((res) => (
-          <div className=" shadow shadow-lg overflow-hidden rounded-lg">
+          <div className="relative shadow-lg overflow-hidden rounded-lg">
             <img
               className="h-60 w-full object-cover"
               src={VIEW + res?.image}
@@ -22,7 +22,7 @@ const AllServices = ({ data }) => {
                 <p className="font-normal text-xs line-clamp-5 ">{res?.description}</p>
             </div>
             <div className="h-14 justify-end  flex items-end">
-            <button onClick={()=>navigate(`/view-service/${res?._id}`)} className=" px-3  text-sm  h-fit">Read more...</button>
+            <button onClick={()=>navigate(`/view-service/${res?._id}`)} className="absolute p-3 border-none bg-transparent bottom-0 right-0 text-sm  h-fit">Read more...</button>
             </div>
             </div>
           </div>

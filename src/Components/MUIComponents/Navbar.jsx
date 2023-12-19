@@ -171,7 +171,7 @@ export const Navbar = () => {
                 // sx={{ my: 2, color: "inverted", display: "block" }}
                 // className="text-white "
                 onClick={() => handleNavigate(res?.path)}
-                className=" mx-4 text-xs  text-stone-600 hover:text-teal-600 hover:font-semibold duration-200"
+                className=" mx-4 text-xs bg-transparent border-none text-stone-600 hover:text-teal-600 hover:font-semibold duration-200"
               >
                 {res?.name}
               </button>

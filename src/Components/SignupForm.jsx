@@ -53,7 +53,7 @@ const SignupForm = () => {
         </div>
         <div>
           <div className="flex gap-4">
-            <input
+            <input  style={{border:'none'}}
               onChange={(e) => setFirstName(e.target.value)}
               className="bg-stone-100 my-4 w-1/2 text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
               type="text"
@@ -61,9 +61,9 @@ const SignupForm = () => {
               id=""
               placeholder="First Name"
             />
-            <input
+            <input  style={{border:'none'}}
               onChange={(e) => setLastName(e.target.value)}
-              className="bg-stone-100 my-4 w-1/2 text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
+              className="bg-stone-100 my-4 w-[50%] text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
               type="text"
               name=""
               id=""
@@ -71,7 +71,7 @@ const SignupForm = () => {
             />
           </div>
           <div>
-            <input
+            <input  style={{border:'none'}}
               onChange={(e) => setEmail(e.target.value)}
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
               type="text"
@@ -81,7 +81,7 @@ const SignupForm = () => {
             />
           </div>
           <div>
-            <input
+            <input  style={{border:'none'}}
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
               type="text"
               name=""
@@ -91,7 +91,7 @@ const SignupForm = () => {
             />
           </div>
           <div>
-            <input
+            <input  style={{border:'none'}}
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
               type="text"
               name=""
@@ -101,7 +101,7 @@ const SignupForm = () => {
             />
           </div>
           <div>
-            <input
+            <input  style={{border:'none'}}
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none hover:outline-teal-300 rounded-md"
               type="number"
@@ -111,7 +111,7 @@ const SignupForm = () => {
             />
           </div>
           <div>
-            <input
+            <input  style={{border:'none'}}
               onChange={(e) => setDOB(e.target.value)}
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
               type="date"
