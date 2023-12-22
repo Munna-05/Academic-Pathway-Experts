@@ -1,14 +1,16 @@
 import moment from "moment";
 import React from "react";
 
-const JobInformations = () => {
+const JobInformations = ({data}) => {
+  console.log("🚀 ~ file: JobInformations.jsx:5 ~ JobInformations ~ data:", data)
   return (
     <div>
       <div className="h-80 bg-gradient-to-r from-rose-950 to-blue-950 backdrop-blur-sm ">
         <div className=" h-full w-2/3 mx-auto flex items-center justify-between p-6">
           <div className="text-left">
-            <h1 className="text-3xl text-white font-bold">Software Engineer</h1>
-            <p className="text-sm text-stone-400">location</p>
+            <h1 className="text-3xl capitalize text-white font-bold">{data?.title}</h1>
+            <p className="text-lg font-semibold capitalize text-teal-400">{data?.company}</p>
+            <p className="text-sm text-stone-400">{data?.location}</p>
           </div>
           <div>
             <button className="w-80 hover:bg-pink-500 duration-300 h-12 bg-pink-400 font-bold text-white rounded-lg text-sm p-2">
@@ -25,17 +27,11 @@ const JobInformations = () => {
           <div className="text-left mb-12">
             <h1 className="text-2xl mb-4 font-bold">Job Description</h1>
             <p className="text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit harum
-              iusto veritatis temporibus quia nemo sint architecto deserunt
-              natus, quidem quis, quas hic incidunt libero unde quae. Architecto
-              totam nihil rerum quia, sapiente, exercitationem, placeat
-              necessitatibus tempora dicta corporis ipsum inventore rem esse
-              fugit facere hic labore? Voluptatem accusantium beatae id aliquam
-              nemo delectus! Commodi praesentium maiores vero mollitia ullam?
+             {data?.description}
             </p>
           </div>
 
-          <div className="text-left mb-12">
+          {/* <div className="text-left mb-12">
             <h1 className="text-2xl mb-4 font-bold">Key Responsibilities</h1>
             <div className="text-sm">
               <p>
@@ -57,40 +53,8 @@ const JobInformations = () => {
                 perferendis eos adipisci labore?
               </p>
             </div>
-          </div>
-          <div className="text-left mb-12">
-            <h1 className="text-2xl mb-4 font-bold">Key Responsibilities</h1>
-            <div className="text-sm">
-              <li className="m-1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident!
-              </li>
-              <li className="m-1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident!
-              </li>
-              <li className="m-1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident!
-              </li>
-              <li className="m-1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident!
-              </li>
-              <li className="m-1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident!
-              </li>
-              <li className="m-1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident!
-              </li>
-              <li className="m-1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Explicabo, provident!
-              </li>
-            </div>
-          </div>
+          </div> */}
+         
         </div>
         <div className="w-1/4 p-2 pt-12">
           <div className="w-full rounded shadow-md p-4">
@@ -112,7 +76,7 @@ const JobInformations = () => {
 
               <h1 className="text-sm font-semibold font-sans">Date Posted</h1>
               <p className="text-sm text-stone-500 font-sans">
-                {moment(Date.now()).format("LLL")}
+                {moment(data?.createdAt).format("lll")}
               </p>
             </div>
             <div className="text-left p-4">
@@ -131,8 +95,8 @@ const JobInformations = () => {
                 />
               </svg>
 
-              <h1 className="text-sm font-semibold font-sans">Experience</h1>
-              <p className="text-sm text-stone-500 font-sans">1 year</p>
+              <h1 className="text-sm font-semibold font-sans">Experience Level</h1>
+              <p className="text-sm text-stone-500 font-sans">{data?.experienceLevel}</p>
             </div>
             <div className="text-left p-4">
               <svg
@@ -152,7 +116,7 @@ const JobInformations = () => {
 
               <h1 className="text-sm font-semibold font-sans">Last Date</h1>
               <p className="text-sm text-stone-500 font-sans">
-                {moment(Date.now()).format("LLL")}
+                {moment(data?.createdAt).add(30, 'days').format("LL")}
               </p>
             </div>
           </div>
