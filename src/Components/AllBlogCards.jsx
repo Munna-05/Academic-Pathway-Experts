@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const AllBlogCards = ({ main }) => {
   const navigate = useNavigate();
-  const blogs = useSelector((state) => state.blogs.data);
+  const blogs = useSelector((state) => state?.blogs?.data);
   return (
     <div>
       <div className="bg-[#EEF5FF] ">
