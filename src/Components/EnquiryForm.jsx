@@ -23,7 +23,7 @@ const EnquiryForm = () => {
     toast.loading('Sending Enquiry...')
     // Perform the form submission logic here
     // For simplicity, let's just log the form data
-    axios.post(`${process.env.REACT_APP_API_URL}/enquiry/${localStorage.getItem('id')}`,formData).then((res)=>{
+    axios.post(`${process.env.REACT_APP_API_URL}/enquiry`,formData).then((res)=>{
         console.log(res.data);
         console.log(res.data.message)
         toast.remove()

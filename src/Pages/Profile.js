@@ -22,7 +22,7 @@ const Profile = () => {
     console.log(data);
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/enquiry/${localStorage.getItem("id")}`, data)
+      .post(`${process.env.REACT_APP_API_URL}/enquiry`, data)
       .then((res) => {
         console.log(res.data);
         setCall(!call);
