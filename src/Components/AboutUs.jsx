@@ -2,11 +2,11 @@ import React from "react";
 import JobSection from "./JobSection";
 import AllBlogCards from "./AllBlogCards";
 import EnquiryForm from "./EnquiryForm";
-
+import {motion} from 'framer-motion'
 const AboutUs = () => {
   window.scroll(0, 0);
   return (
-    <div className="container mx-auto my-8 p-8 mt-16 ">
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5,type:'spring  '}} className="container mx-auto my-8 p-8 mt-16 ">
       {/* <h1 className="text-3xl font-bold text-blue-500 mb-4">About Academic Pathway Experts</h1>
 
             <p className="text-gray-700 mb-6">
@@ -48,7 +48,7 @@ const AboutUs = () => {
                 Embark on your European journey with Academic Pathway Experts and let us be your bridge to academic and professional success. Contact us today to start your adventure!
             </p> */}
 
-      <div className=" w-4/5 mx-auto">
+      <div className=" w-4/5 mt-16 mx-auto">
         <div className="text-left">
           <span className="text-sm font-semibold text-rose-500 text-left">
             About us
@@ -121,7 +121,7 @@ const AboutUs = () => {
       <div className="mt-8">
       <AllBlogCards main={false} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

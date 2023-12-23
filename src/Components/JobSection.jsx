@@ -15,9 +15,8 @@ const JobSection = () => {
         <div className="text-5xl  font-bold mt-4 text-stone-700">
           Explore Thousands of Jobs
         </div>
-        <div className="w-1/2  mx-auto mt-4 px-4 text-sm ">
-          Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi.
-          Morbi mattis ullamcorper velit.
+        <div className="w-3/4  mx-auto my-8 px-4 text-sm ">
+        Discover endless career possibilities on our job search platform. Explore thousands of diverse job listings, tailored to your skills and aspirations. Whether you're a seasoned professional or just starting, find the perfect opportunity to shape your future. Your next career move is just a click away.
         </div>
         <div className="grid mt-5  grid-cols-3 ">
           <div className=" h-60 mb-4  items-center flex justify-center">
@@ -47,7 +46,7 @@ const JobSection = () => {
                 Create an account
               </h4>
               <p className="text-sm text-stone-500">
-                Nunc nonummy metus. Donec elit libero.
+                {/* Nunc nonummy metus. Donec elit libero. */}
               </p>
             </div>
           </div>
@@ -79,7 +78,7 @@ const JobSection = () => {
                 Complete Your Profile
               </h4>
               <p className="text-sm text-stone-500">
-                Nunc nonummy metus. Donec elit libero.
+                {/* Nunc nonummy metus. Donec elit libero. */}
               </p>
             </div>
           </div>
@@ -111,7 +110,7 @@ const JobSection = () => {
                 Search Your Job
               </h4>
               <p className="text-sm text-stone-500">
-                Nunc nonummy metus. Donec elit libero.
+                {/* Nunc nonummy metus. Donec elit libero. */}
               </p>
             </div>
           </div>
