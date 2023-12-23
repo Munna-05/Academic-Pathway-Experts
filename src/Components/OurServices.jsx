@@ -10,7 +10,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API, VIEW } from "../API";
 import axios from "axios";
 import { setService } from "../Redux/serviceSlice";
@@ -18,14 +18,8 @@ import { useNavigate } from "react-router-dom";
 
 const OurServices = () => {
   const navigate = useNavigate()
-   const [services,setAllServices] = useState()
-    const dispatch = useDispatch()
-    useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_API_URL}/services`).then((res)=>{
-            setAllServices(res?.data)
-            dispatch(setService(res?.data))
-        }).catch(e=>console.log(e))
-    },[])
+  
+  const services = useSelector(state=>state.services.data)
 
   return (
     <div className="w-2/3 p-6 py-12 text-left mx-auto">

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { API } from '../API';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBlogs } from '../Redux/blogSlice';
+import LoadingPage from '../Components/LoadingPage/LoadingPage';
 
 const AllBlogs = () => {
     window.scrollTo(0, 0);
@@ -26,7 +27,9 @@ const AllBlogs = () => {
     },[])
   return (
     <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5,type:'spring  '}} className='pt-16'>
-       {blogs || all_blogs &&  <AllBlogCards main={true} />}
+       {blogs || all_blogs ?  <AllBlogCards main={true} /> :<><LoadingPage/></>}
+
+       
     </motion.div>
   )
 }

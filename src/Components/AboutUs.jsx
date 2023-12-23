@@ -6,7 +6,7 @@ import {motion} from 'framer-motion'
 const AboutUs = () => {
   window.scroll(0, 0);
   return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5,type:'spring  '}} className="container mx-auto my-8 p-8 mt-16 ">
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5}} className="container mx-auto my-8 p-8 mt-16 ">
       {/* <h1 className="text-3xl font-bold text-blue-500 mb-4">About Academic Pathway Experts</h1>
 
             <p className="text-gray-700 mb-6">

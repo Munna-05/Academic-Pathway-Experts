@@ -58,7 +58,7 @@ const AllBlogCards = ({ main }) => {
       {/* cards section  */}
 
       <div className="w-3/4   p-4 mx-auto grid grid-cols-3 ">
-        {blogs.slice(main ? 1 : 0)?.map((res) => (
+        {blogs?.slice(main ? 1 : 0)?.map((res) => (
           <div
             onClick={() => navigate(`/blog-post/${res?._id}`)}
             className="h-[60vh] cursor-pointer hover:scale-[101%] brightness-100 hover:brightness-105 hover:shadow-lg hover:shadow-stone-300 duration-300 m-4 relative  rounded-xl overflow-hidden shadow"
