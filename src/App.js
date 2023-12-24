@@ -21,6 +21,7 @@ import Layout from "./Components/Layout";
 import Services from "./Pages/Services";
 import ViewService from "./Pages/ViewService";
 import AboutUs from "./Components/AboutUs";
+import ErrorPage from "./Pages/ErrorPage";
 
 function App() {
   window.scrollTo(0, 1);
@@ -71,6 +72,7 @@ function App() {
               <Route path="/job-details/:id" element={<JobDetails />} />
               <Route path="/blog-post/:id" element={<BlogPost />} />
               <Route path="/about-country/:name" element={<AboutCountry />} />
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </Layout>
         </BrowserRouter>
