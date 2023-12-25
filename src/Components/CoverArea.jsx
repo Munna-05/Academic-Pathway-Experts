@@ -38,8 +38,7 @@ const CoverArea = () => {
                     Experts
                   </div>
                   <div className="text-left text-white text-sm mt-2">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Fuga, veritatis!
+                  Embark on your European journey with Academic Pathway Experts
                   </div>
                 </div>
               </div>
