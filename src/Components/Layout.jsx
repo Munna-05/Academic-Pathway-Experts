@@ -3,7 +3,6 @@ import { Navbar } from "./MUIComponents/Navbar";
 import Footer from "./Footer";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { API } from "../API";
 import { setUser } from "../Redux/userSlice";
 
 const Layout = ({ children }) => {

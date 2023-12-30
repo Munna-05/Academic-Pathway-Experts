@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { API } from "../API";
 
 const SignupForm = () => {
   const [FirstName, setFirstName] = useState();

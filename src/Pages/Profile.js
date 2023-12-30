@@ -3,7 +3,6 @@ import ProfileComponent from "../Components/ProfileComponent";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { API } from "../API";
 import { toast } from "react-hot-toast";
 
 const Profile = () => {

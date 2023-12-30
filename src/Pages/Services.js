@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { API } from "../API";
 import AllServices from "../Components/AllServices";
 import { useDispatch, useSelector } from "react-redux";
 import { setService } from "../Redux/serviceSlice";
@@ -14,7 +13,7 @@ const Services = () => {
   // const [services,setAllServices] = useState()
   useEffect(() => {
     if (!services) {
-      axios.get(`${API}/services`).then((res) => {
+      axios.get(`${process.env.REACT_APP_API_URL}/services`).then((res) => {
         dispatch(setService(res?.data));
       });
     }
