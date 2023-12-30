@@ -1,16 +1,17 @@
 import React from "react";
-import './loading.css'
+// import './loading.css'
 
 const LoadingPage = () => {
   window.scrollTo(0,100);
 
   return (
-    <div className="w-full main h-full  bg-stone-900">
-      <div className="loading-ring h-screen bg-stone-800">
-        Loading
-        <span className="span"></span>
-      </div>
+    <>
+    <div className="w-full main h-[80vh] flex mt-32 justify-center items-center">
+     <img src="./APE_logo.jpg" className="h-1/2 animate-pulse" alt="" />
+     
+    
     </div>
+    </>
   );
 };
 

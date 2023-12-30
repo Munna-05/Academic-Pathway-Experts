@@ -14,7 +14,7 @@ const JobDetails = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.3 }}
-      className="pt-16"
+      className="pt-20"
     >
       <JobInformations data={all_jobs?.find(res=>res?._id === id)}  />
      <div className="py-6  ">

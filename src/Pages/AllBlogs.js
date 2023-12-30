@@ -26,8 +26,8 @@ const AllBlogs = () => {
      
     },[])
   return (
-    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5,type:'spring  '}} className='pt-16'>
-       {blogs || all_blogs ?  <AllBlogCards main={true} /> :<><LoadingPage/></>}
+    <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.3 , duration:0.5,type:'spring  '}} className='pt-20'>
+       {all_blogs || blogs ?  <AllBlogCards main={true} /> :<><LoadingPage/></>}
 
        
     </motion.div>

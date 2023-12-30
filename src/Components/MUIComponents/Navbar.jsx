@@ -70,7 +70,7 @@ export const Navbar = () => {
     >
       <Container maxWidth="xl" sx={{ color: "white" }}>
         <Toolbar disableGutters>
-          <Typography
+          <Grid
             variant="h6"
             noWrap
             component="a"
@@ -79,16 +79,13 @@ export const Navbar = () => {
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              fontSize: 30,
-              textDecoration: "none",
               cursor: "pointer",
+           
+            
             }}
           >
-            - APE -
-          </Typography>
+            <img className="scale-150 mix-blend-multiply w-20 rounded-b-xl "  src="./APE_logo.jpg" alt="" />
+          </Grid>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
