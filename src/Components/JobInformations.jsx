@@ -1,8 +1,24 @@
+import axios from "axios";
 import moment from "moment";
 import React from "react";
+import { toast } from "react-hot-toast";
 
 const JobInformations = ({data}) => {
   console.log("🚀 ~ file: JobInformations.jsx:5 ~ JobInformations ~ data:", data)
+  const token = localStorage.getItem('token')
+  const userid = localStorage.getItem('id')
+  const handleApplication =()=>{
+    if(!token){
+      toast.error("Login or Signup to Apply for jobs")
+    }else{
+      axios.post(`${process.env.REACT_APP_API_URL}/jobs?uid=${userid}&jid=${data?._id}`).then((res)=>{
+        toast.success("Application Submitted ")
+      }).catch(e => {
+        console.log("🚀 ~ file: JobInformations.jsx:17 ~ axios.post ~ e:", e)
+        toast.error("Error , Try again")
+      })
+    }
+  }
   return (
     <div>
       <div className="h-80 bg-gradient-to-r from-rose-950 to-blue-950 backdrop-blur-sm ">
@@ -13,7 +29,7 @@ const JobInformations = ({data}) => {
             <p className="text-sm text-stone-400">{data?.location}</p>
           </div>
           <div>
-            <button className="w-80 hover:bg-pink-500 duration-300 h-12 bg-pink-400 font-bold text-white rounded-lg text-sm p-2">
+            <button onClick={handleApplication} className="w-80 hover:bg-pink-500 duration-300 h-12 bg-pink-400 font-bold text-white rounded-lg text-sm p-2">
               Apply Now
             </button>
           </div>
