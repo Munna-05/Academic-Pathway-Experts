@@ -65,7 +65,7 @@ const LoginComponent = () => {
           <div>
             <input
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
-              type="text"
+              type="password"
               style={{border:'none'}}
               name=""
               id=""

@@ -129,7 +129,8 @@ export const Navbar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <img className="scale-150 mix-blend-multiply w-20 lg:hidden md:hidden xl:hidden block rounded-b-xl " onClick={()=>navigate('/')}  src="./APE_logo.jpg" alt="" />
+
           <Typography
             variant="h5"
             noWrap
@@ -146,7 +147,7 @@ export const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            
           </Typography>
           <Box
             justifyContent={"center"}
@@ -183,7 +184,7 @@ export const Navbar = () => {
               {!token ? (
                 <button
                   onClick={() => navigate("/login")}
-                  className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm border px-4 py-1 w-28 rounded-full border-stone-500 "
+                  className="text-stone-500 outline-none hover:text-stone-200 hover:border-stone-200 hover:scale-[102%] duration-200 text-sm pl px-4 py-1 w-28 rounded-full border-stone-500 "
                 >
                   Log in
                 </button>

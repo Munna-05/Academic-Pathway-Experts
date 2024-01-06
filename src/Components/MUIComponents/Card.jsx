@@ -26,12 +26,12 @@ const MuiCard = ({name , description ,image}) => {
         },
       }}
     >
-      <CardMedia
+      {/* <CardMedia
         component="img"
         alt="green iguana"
         height="140"
         image={image}
-      />
+      /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {name}

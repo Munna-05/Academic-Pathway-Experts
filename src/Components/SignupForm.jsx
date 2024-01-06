@@ -82,7 +82,7 @@ const SignupForm = () => {
           <div>
             <input  style={{border:'none'}}
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
-              type="text"
+              type="password"
               name=""
               id=""
               onChange={(e) => setPassword(e.target.value)}
@@ -92,7 +92,7 @@ const SignupForm = () => {
           <div>
             <input  style={{border:'none'}}
               className="bg-stone-100 my-4 w-full text-stone-600 ring-teal-300 ring-1 p-4 outline-teal-300 hover:outline-teal-300 rounded-md"
-              type="text"
+              type="password"
               name=""
               id=""
               onChange={(e) => setCpass(e.target.value)}

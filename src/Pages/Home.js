@@ -12,16 +12,19 @@ import { setBlogs } from "../Redux/blogSlice";
 import { setJobs } from "../Redux/JobSlice";
 import { setService } from "../Redux/serviceSlice";
 import LoadingPage from "../Components/LoadingPage/LoadingPage";
+import { setCourses } from "../Redux/courseSlice";
+import Courses from "./Courses";
 
 const Home = () => {
   const dispatch = useDispatch();
   const services = useSelector((state) => state.services.data);
-  const all_jobs = useSelector((state) => state?.jobs?.data) || null;
+  const all_jobs = useSelector((state) => state?.jobs?.data)
   const all_blogs = useSelector((state) => state.blogs.data);
+  const all_courses = useSelector((state)=>state?.courses?.data)
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!services || !all_jobs || !all_blogs) {
+    if (!services || !all_jobs || !all_blogs || all_courses) {
       axios
         .get(`${process.env.REACT_APP_API_URL}/blogs`)
         .then((res) => {
@@ -46,6 +49,13 @@ const Home = () => {
           setLoading(false);
         })
         .catch((e) => console.log(e));
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/courses`)
+        .then((res) => {
+          dispatch(setCourses(res?.data));
+          setLoading(false);
+        })
+        .catch((e) => console.log(e));
     } else {
       setLoading(true);
     }
@@ -65,8 +75,9 @@ const Home = () => {
           <Section2 />
           {/* <WeWorkWith/> */}
           <JobSection />
+          <Courses/>
           <OurServices />
-          <Countries />
+          {/* <Countries /> */}
         </motion.div>
       )}
     </>
